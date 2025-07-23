@@ -1,0 +1,517 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #A0522D;
+}
+
+/* Header styles */
+header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8B4513;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #8B4513;
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+}
+
+.contacts span {
+    margin-right: 15px;
+    font-weight: 500;
+}
+
+.social a {
+    margin-left: 10px;
+    font-size: 18px;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.social a:hover {
+    color: #8B4513;
+}
+
+/* Hero section */
+.hero {
+    padding-top: 80px;
+    position: relative;
+}
+
+.carousel {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.carousel-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-content p {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+    margin-top: 30px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* Stats section */
+.stats {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.stats .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.stat-item h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #8B4513;
+}
+
+.stat-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* CTA section */
+.cta {
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* Catalog section */
+.catalog {
+    padding: 60px 0;
+    background-color: #f5f5f5;
+}
+
+.catalog h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #8B4513;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.catalog-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.catalog-item:hover {
+    transform: translateY(-5px);
+}
+
+.catalog-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.catalog-item h3 {
+    font-size: 18px;
+    padding: 15px 15px 5px;
+    color: #333;
+}
+
+.catalog-item p {
+    font-size: 14px;
+    padding: 0 15px 15px;
+    color: #666;
+}
+
+.catalog-link {
+    display: block;
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    color: #8B4513;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.catalog-link:hover {
+    background-color: #e0e0e0;
+}
+
+/* Motivation section */
+.motivation {
+    padding: 60px 0;
+    background-color: #8B4513;
+    color: white;
+}
+
+.motivation .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.motivation-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.motivation-item h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.motivation-item p {
+    font-size: 16px;
+}
+
+/* Contact form section */
+.contact-form {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.contact-form h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #8B4513;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.contact-methods {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contact-methods p {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.contact-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.contact-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.contact-links a:hover {
+    background-color: #e0e0e0;
+}
+
+.contact-links i {
+    margin-right: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 0;
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8B4513;
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.footer-contacts p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer-social {
+    display: flex;
+    margin-top: 15px;
+}
+
+.footer-social a {
+    margin-right: 15px;
+    font-size: 18px;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .catalog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .stats .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    nav ul {
+        margin-bottom: 15px;
+    }
+    
+    .contacts {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contacts span {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .carousel-content h1 {
+        font-size: 36px;
+    }
+    
+    .carousel-content p {
+        font-size: 18px;
+    }
+    
+    .hero-text p {
+        font-size: 16px;
+    }
+    
+    .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .motivation .container {
+        grid-template-columns: 1fr;
+    }
+    
+    footer .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-contacts {
+        text-align: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 5px 10px;
+    }
+    
+    .carousel-content h1 {
+        font-size: 28px;
+    }
+    
+    .carousel-content p {
+        font-size: 16px;
+    }
+    
+    .stats .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-links {
+        grid-template-columns: 1fr;
+    }
+}
