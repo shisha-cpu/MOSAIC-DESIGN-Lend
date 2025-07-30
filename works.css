@@ -1,0 +1,124 @@
+/* Стили для страницы работ */
+
+/* Герой-секция */
+.works-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://images.unsplash.com/photo-1600566752225-5376a8d20a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+
+    padding: 0 20px;
+}
+
+.works-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.works-hero p {
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Галерея работ */
+.works-gallery {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+/* Стили для слайдера */
+.works-slider {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.work-slide {
+    padding: 0 15px;
+    outline: none;
+}
+
+.work-slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.work-slide:hover img {
+    transform: scale(1.02);
+}
+
+/* Стили для точек навигации слайдера */
+.slick-dots {
+    bottom: -40px;
+}
+
+.slick-dots li button:before {
+    font-size: 12px;
+    color: #8B4513;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #8B4513;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .works-hero {
+        height: 300px;
+    }
+    
+    .works-hero h1 {
+        font-size: 36px;
+    }
+    
+    .works-hero p {
+        font-size: 20px;
+    }
+    
+    .works-gallery {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .works-hero {
+        height: 250px;
+    }
+    
+    .works-hero h1 {
+        font-size: 32px;
+    }
+    
+    .works-hero p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .works-hero {
+        height: 200px;
+        margin-top: 60px;
+    }
+    
+    .works-hero h1 {
+        font-size: 28px;
+    }
+    
+    .works-hero p {
+        font-size: 16px;
+    }
+    
+    .work-slide img {
+        height: 300px;
+    }
+}

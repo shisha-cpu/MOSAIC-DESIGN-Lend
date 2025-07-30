@@ -1,0 +1,225 @@
+/* Стили для страницы отзывов */
+
+/* Герой-секция с фоновым изображением */
+.reviews-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://images.unsplash.com/photo-1600566752225-5376a8d20a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+ 
+    padding: 0 20px;
+}
+
+.reviews-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.reviews-hero p {
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Пресса о нас */
+.press-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.press-section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #8B4513;
+}
+
+.press-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.press-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.press-item:hover {
+    transform: translateY(-10px);
+}
+
+.press-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.press-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.press-item:hover .press-image img {
+    transform: scale(1.05);
+}
+
+.press-content {
+    padding: 30px;
+}
+
+.press-content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #8B4513;
+}
+
+.press-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Отзывы клиентов */
+.testimonials-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.testimonials-section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #8B4513;
+}
+
+/* Стили для слайдера */
+.reviews-slider {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.review-slide {
+    padding: 0 15px;
+    outline: none;
+}
+
+.review-slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.review-slide:hover img {
+    transform: scale(1.02);
+}
+
+/* Стили для точек навигации слайдера */
+.slick-dots {
+    bottom: -40px;
+}
+
+.slick-dots li button:before {
+    font-size: 12px;
+    color: #8B4513;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #8B4513;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .press-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reviews-hero {
+        height: 300px;
+    }
+    
+    .reviews-hero h1 {
+        font-size: 36px;
+    }
+    
+    .reviews-hero p {
+        font-size: 20px;
+    }
+    
+    .press-section,
+    .testimonials-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-hero {
+        height: 250px;
+    }
+    
+    .reviews-hero h1 {
+        font-size: 32px;
+    }
+    
+    .reviews-hero p {
+        font-size: 18px;
+    }
+    
+    .press-content {
+        padding: 20px;
+    }
+    
+    .press-content h3 {
+        font-size: 20px;
+    }
+    
+    .press-content p {
+        font-size: 15px;
+    }
+    
+    .testimonials-section h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-hero {
+        height: 200px;
+        margin-top: 60px;
+    }
+    
+    .reviews-hero h1 {
+        font-size: 28px;
+    }
+    
+    .reviews-hero p {
+        font-size: 16px;
+    }
+    
+    .press-section h2,
+    .testimonials-section h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
+    .press-image {
+        height: 200px;
+    }
+    
+    .review-slide img {
+        height: 300px;
+    }
+}

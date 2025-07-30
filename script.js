@@ -1,53 +1,64 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Carousel functionality
     const carouselItems = document.querySelectorAll('.carousel-item');
-    let currentItem = 0;
-    
-    function showNextItem() {
-        carouselItems[currentItem].classList.remove('active');
-        currentItem = (currentItem + 1) % carouselItems.length;
+    if (carouselItems.length > 0) {
+        let currentItem = 0;
         carouselItems[currentItem].classList.add('active');
+        
+        function showNextItem() {
+            carouselItems[currentItem].classList.remove('active');
+            currentItem = (currentItem + 1) % carouselItems.length;
+            carouselItems[currentItem].classList.add('active');
+        }
+        
+        // Change slide every 5 seconds
+        setInterval(showNextItem, 5000);
     }
-    
-    // Change slide every 5 seconds
-    setInterval(showNextItem, 5000);
-    
+
     // Form submission
     const feedbackForm = document.getElementById('feedbackForm');
-    
-    feedbackForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        
-        // Here you would typically send the data to a server
-        console.log('Form submitted:', { name, phone, email, message });
-        
-        // Show success message
-        alert('Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.');
-        
-        // Reset form
-        feedbackForm.reset();
-    });
-    
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+    if (feedbackForm) {
+        feedbackForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
             
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+            // Here you would typically send the data to a server
+            console.log('Form submitted:', formData);
+            
+            // Show success message
+            alert('Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.');
+            
+            // Reset form
+            feedbackForm.reset();
+        });
+    }
+    
+    // Improved navigation handling
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Handle internal anchor links (#section)
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL without page reload
+                    history.pushState(null, null, href);
+                }
             }
+            // External links (.html, http, etc) will work normally
         });
     });
     
@@ -58,4 +69,14 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Для расчета стоимости панно свяжитесь с нами по телефону или через форму обратной связи.');
         });
     }
+    
+    // Social links handler (optional)
+    document.querySelectorAll('.social a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // You can add tracking here
+            console.log('Social link clicked:', this.href);
+        });
+    });
 });
+
+

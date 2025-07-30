@@ -515,3 +515,69 @@ footer .container {
         grid-template-columns: 1fr;
     }
 }
+
+
+@media (max-width: 1024px) {
+    .mega-menu {
+        width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mega-menu {
+        width: 90vw;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .mega-menu {
+        grid-template-columns: 1fr;
+    }
+}/* Mega menu styles */
+.menu-item-has-children {
+    position: relative;
+}
+
+.mega-menu {
+    position: absolute;
+    left: 0%;
+    transform: translateX(-50%);
+    top: 100%;
+    width: 800px;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    z-index: 1000;
+}
+
+.menu-item-has-children:hover .mega-menu {
+    display: grid;
+}
+
+.mega-menu-column h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #8B4513;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.mega-menu-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mega-menu-column li a {
+    color: #555;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.mega-menu-column li a:hover {
+    color: #8B4513;
+}
